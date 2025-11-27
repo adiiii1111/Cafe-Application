@@ -1,14 +1,8 @@
-# Method	Endpoint	Description
-# GET	/menu	Customer sees menu
-# POST	/menu	Add item (Admin)
-# PUT	/menu/{id}	Update item
-# DELETE	/menu/{id}	Remove item
-
 from typing import List
-from Backend.app.db.db_connection import get_db
-from Backend.app.menu.schema import MenuCreateRequest, MenuResponse, MenuUpdateRequest
-from Backend.app.menu.service import MenuService
-from Backend.app.utils import current_user_auth
+from app.db.db_connection import get_db
+from app.menu.schema import MenuCreateRequest, MenuResponse, MenuUpdateRequest
+from app.menu.service import MenuService
+from app.utils import current_user_auth
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 menu_router = APIRouter()

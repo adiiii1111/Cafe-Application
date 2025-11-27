@@ -1,9 +1,9 @@
 from fastapi import HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-from Backend.app.menu.model import MenuItems
-from Backend.app.menu.schema import MenuCreateRequest, MenuResponse, MenuUpdateRequest
-from Backend.app.utils import get_user
+from app.menu.model import MenuItems
+from app.menu.schema import MenuCreateRequest, MenuResponse, MenuUpdateRequest
+from app.utils import get_user
 import logging
 
 logger = logging.getLogger(__name__)

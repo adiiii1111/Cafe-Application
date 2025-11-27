@@ -1,5 +1,5 @@
-from Backend.app.db.db_connection import get_db
-from Backend.app.user.model import User
+from app.db.db_connection import get_db
+from app.user.model import User
 from fastapi import HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
