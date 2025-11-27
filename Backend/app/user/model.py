@@ -9,16 +9,15 @@ def get_utc_now():
 
 class User(Base):
     __tablename__ = "users"
-    __table_args__ = {"schema": "user_profile"}
+    __table_args__ = {"schema": "boxarts"}
 
     id = Column(
         String(36), primary_key=True, default=lambda: str(uuid.uuid4())
     )
     email = Column(String, unique=True)
-    first_name = Column(String)
-    last_name = Column(String)
+    name = Column(String)
     password = Column(String)
-    user_type = Column(String)
+    role = Column(String)
     created_at = Column(DateTime, default=get_utc_now)
     updated_at = Column(
         DateTime,
@@ -29,13 +28,11 @@ class User(Base):
     def __init__(
         self,
         email,
-        first_name,
-        last_name,
-        user_type,
+        name,
+        role,
         password,
     ):
         self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
-        self.user_type = user_type
+        self.name = name
+        self.role = role
         self.password = password

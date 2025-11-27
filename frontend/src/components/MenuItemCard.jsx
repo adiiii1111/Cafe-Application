@@ -1,19 +1,24 @@
 import React from "react";
 import { Card, CardContent, Typography, Button } from "@mui/material";
+import { useCart } from "../context/cartContext";
 
 function MenuItemCard({ item }) {
-  const handleAddToCart = () => {
-    console.log("Add to cart:", item);
-    // You can implement a cart hook here
-  };
+  const { addItem } = useCart();
 
   return (
-    <Card>
+    <Card sx={{ p: 1 }}>
       <CardContent>
         <Typography variant="h6">{item.name}</Typography>
-        <Typography color="text.secondary">{item.category}</Typography>
-        <Typography>${item.price}</Typography>
-        <Button variant="contained" sx={{ mt: 2 }} onClick={handleAddToCart}>
+        <Typography variant="body2">{item.category}</Typography>
+        <Typography variant="subtitle1" sx={{ mt: 1 }}>
+          ₹{item.price}
+        </Typography>
+
+        <Button
+          variant="contained"
+          sx={{ mt: 2 }}
+          onClick={() => addItem(item)}
+        >
           Add to Cart
         </Button>
       </CardContent>

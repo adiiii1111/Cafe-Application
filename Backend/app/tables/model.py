@@ -8,7 +8,7 @@ def get_utc_now():
 
 class Table(Base):
     __tablename__ = "tables"
-    __table_args__ = {"schema": "user_profile"}
+    __table_args__ = {"schema": "boxarts"}
 
     id = Column(Integer, primary_key=True)
     table_number = Column(String)

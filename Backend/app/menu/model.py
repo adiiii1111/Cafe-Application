@@ -8,7 +8,7 @@ def get_utc_now():
 
 class MenuItems(Base):
     __tablename__ = "menu_items"
-    __table_args__ = {"schema": "user_profile"}
+    __table_args__ = {"schema": "boxarts"}
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -16,4 +16,4 @@ class MenuItems(Base):
     price = Column(Float)
     available = Column(Boolean)
     created_at = Column(DateTime, default=get_utc_now)
-    updated_at = Column(DateTime, default= get_utc_now, on_update=get_utc_now)
+    updated_at = Column(DateTime, default= get_utc_now, onupdate=get_utc_now)

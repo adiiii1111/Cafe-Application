@@ -16,15 +16,15 @@ class MenuService:
     # ----------------------------------------------
     # CREATE MENU ITEM
     # ----------------------------------------------
-    async def add_menu(self, menu: MenuCreateRequest, user_email_org: str) -> MenuResponse:
+    async def add_menu(self, menu: MenuCreateRequest) -> MenuResponse:
         try:
-            email, _ = user_email_org
-            logger.info(f"[add_menu] Initiated by user: {email}")
+            # email, _ = user_email_org
+            # logger.info(f"[add_menu] Initiated by user: {email}")
 
-            user = get_user(email, self.db)
+            # user = get_user(email, self.db)
 
-            if user.user_type.lower() != "admin":
-                raise HTTPException(status_code=403, detail=f"Unauthorized User: {email}")
+            # if user.user_type.lower() != "admin":
+            #     raise HTTPException(status_code=403, detail=f"Unauthorized User: {email}")
 
             # Prevent duplicate item names
             existing_item = (

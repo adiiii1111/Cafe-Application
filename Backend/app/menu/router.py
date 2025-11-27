@@ -11,11 +11,11 @@ menu_router = APIRouter()
 async def add_menu_item(
         menu: MenuCreateRequest,
         db: Session = Depends(get_db),
-        user_email_org: str = Depends(current_user_auth),
+        # user_email_org: str = Depends(current_user_auth),
 ):
     try:
         service = MenuService(db)
-        return await service.add_menu(menu,user_email_org)
+        return await service.add_menu(menu)
     except Exception as e:
         raise e
     
