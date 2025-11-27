@@ -1,0 +1,12 @@
+__pycache__
+__pycache__/
+.be_venv/
+be_venv/
+.idea
+.idea/
+app/.env
+*.pyc
+.env
+*.log
+.\be_venv
+.\be_venv\
