@@ -10,3 +10,4 @@ app/.env
 *.log
 .\be_venv
 .\be_venv\
+.\app\.env
