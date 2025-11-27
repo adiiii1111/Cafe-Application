@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider, CssBaseline} from "@mui/material";
 import theme from "./theme.js";
 import { CartProvider } from "./context/cartContext.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
+    <CssBaseline />   {/* ← ADD THIS */}
     <BrowserRouter>
       <CartProvider>
         <App />
@@ -16,10 +17,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </BrowserRouter>
   </ThemeProvider>
 );
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <BrowserRouter>
-//     <CartProvider>
-//       <App />
-//     </CartProvider>
-//   </BrowserRouter>
-// );

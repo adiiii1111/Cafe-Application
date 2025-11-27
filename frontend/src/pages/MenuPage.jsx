@@ -1,29 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { fetchMenu } from "../api/api";
-// import { Grid, Container } from "@mui/material";
-// import MenuItemCard from "../components/MenuItemCard";
-
-// function MenuPage() {
-//   const [menu, setMenu] = useState([]);
-
-//   useEffect(() => {
-//     fetchMenu().then((res) => setMenu(res.data));
-//   }, []);
-
-//   return (
-//     <Container sx={{ mt: 4 }}>
-//       <Grid container spacing={2}>
-//         {menu.map((item) => (
-//           <Grid item xs={12} sm={6} md={4} key={item.id}>
-//             <MenuItemCard item={item} />
-//           </Grid>
-//         ))}
-//       </Grid>
-//     </Container>
-//   );
-// }
-
-// export default MenuPage;
 import React, { useEffect, useState } from "react";
 import { fetchMenu } from "../api/api";
 import {
@@ -32,6 +6,7 @@ import {
   Typography,
   Box,
   Divider,
+  Chip,
 } from "@mui/material";
 import MenuItemCard from "../components/MenuItemCard";
 
@@ -50,17 +25,43 @@ function MenuPage() {
   }, {});
 
   return (
-    <Container sx={{ mt: 4 }}>
+    <Container sx={{ mt: 6, mb: 6 }}>
       {Object.keys(categories).map((category) => (
-        <Box key={category} sx={{ mb: 5 }}>
+        <Box
+          key={category}
+          sx={{
+            mb: 8,
+            p: 2,
+            borderRadius: 4,
+          }}
+        >
           {/* CATEGORY TITLE */}
-          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
-            {category}
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
+          <Chip
+            label={category}
+            sx={{
+              fontSize: "1.2rem",
+              fontFamily: "'Playfair Display', serif",
+              backgroundColor: "rgba(232, 200, 217, 0.6)",
+              color: "#5B4632",
+              px: 3,
+              py: 2,
+              borderRadius: "20px",
+              mb: 2,
+            }}
+          />
 
-          {/* ITEMS UNDER THIS CATEGORY */}
-          <Grid container spacing={2}>
+          <Divider
+            sx={{
+              mb: 4,
+              backgroundColor: "#CFA66A",
+              height: "2px",
+              width: "150px",
+              borderRadius: 2,
+            }}
+          />
+
+          {/* ITEMS UNDER CATEGORY */}
+          <Grid container spacing={3}>
             {categories[category].map((item) => (
               <Grid item xs={12} sm={6} md={4} key={item.id}>
                 <MenuItemCard item={item} />
