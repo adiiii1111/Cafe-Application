@@ -11,3 +11,4 @@ app/.env
 .\be_venv
 .\be_venv\
 .\app\.env
+.\app\.env\
